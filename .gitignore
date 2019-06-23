@@ -1,0 +1,11 @@
+*.sqlite
+*.dll
+*.pdb
+bin/
+*.suo
+/.vs
+/src/.vs
+obj/
+node_modules
+*.user
+packages
