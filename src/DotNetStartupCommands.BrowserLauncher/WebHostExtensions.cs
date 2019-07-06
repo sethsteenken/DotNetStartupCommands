@@ -19,6 +19,7 @@ namespace DotNetStartupCommands.BrowserLauncher
         /// </summary>
         /// <param name="host">Web host instance.</param>
         /// <param name="args">Command line agruments. Requires <see cref="Commands.Launch"/> to launch browser.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public static void LaunchBrowser(this IWebHost host, string[] args)
         {
             if (host == null)

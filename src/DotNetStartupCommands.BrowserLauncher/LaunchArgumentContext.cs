@@ -13,6 +13,7 @@ namespace DotNetStartupCommands.BrowserLauncher
         /// </summary>
         /// <param name="args">Command line arguments. Must contain <see cref="Commands.Launch"/>.</param>
         /// <param name="url">Required url for the browser to open.</param>
+        /// <exception cref="ArgumentNullException"></exception>
         public LaunchArgumentContext(string[] args, string url)
         {
             if (args == null || args.Length == 0)
