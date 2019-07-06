@@ -20,7 +20,7 @@ namespace DotNetStartupCommands.BrowserLauncher
         /// </summary>
         /// <param name="logger">
         /// Logger for events, warnings, and errors. 
-        /// Requires <see cref="ILoggerFactory>"/> in default implementation.
+        /// Requires <see cref="ILoggerFactory"/> in default implementation.
         /// </param>
         /// <param name="browserLookup">
         /// All available browsers registered to lookup keywords.
