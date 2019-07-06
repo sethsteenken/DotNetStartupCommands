@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 using System.Threading;
 
 namespace DotNetStartupCommands.BrowserLauncher
@@ -23,7 +24,7 @@ namespace DotNetStartupCommands.BrowserLauncher
         {
             try
             {
-                if (args == null || args.Length == 0)
+                if (args == null || args.Length == 0 || !args.Any(a => a.ToLower() == Commands.Launch))
                 {
                     _logger.LogInformation("No arguments for launching browser.");
                     return;

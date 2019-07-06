@@ -12,11 +12,16 @@ namespace DotNetStartupCommands.BrowserLauncher
             if (host == null)
                 throw new ArgumentNullException(nameof(host));
 
-            var loggerFactory = host.Services.GetRequiredService<ILoggerFactory>();
+            var browserLauncher = host.Services.GetService<BrowserLauncher>();
 
-            var browserLauncher = new BrowserLauncher(
+            if (browserLauncher == null)
+            {
+                var loggerFactory = host.Services.GetRequiredService<ILoggerFactory>();
+
+                browserLauncher = new BrowserLauncher(
                                             loggerFactory.CreateLogger<BrowserLauncher>(),
-                                            Browser.GetDefaultLookups());
+                                            Browser.DefaultLookups);
+            }
 
             browserLauncher.Launch(args);
         }
