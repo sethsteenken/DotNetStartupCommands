@@ -7,11 +7,25 @@ using System.Threading;
 
 namespace DotNetStartupCommands.BrowserLauncher
 {
+    /// <summary>
+    /// Performs the browser application launching event based on command line arguments.
+    /// </summary>
     public sealed class BrowserLauncher
     {
         private readonly ILogger<BrowserLauncher> _logger;
         private readonly IDictionary<string, Browser> _browserLookup;
 
+        /// <summary>
+        /// Creates a browser launching instance.
+        /// </summary>
+        /// <param name="logger">
+        /// Logger for events, warnings, and errors. 
+        /// Requires <see cref="ILoggerFactory>"/> in default implementation.
+        /// </param>
+        /// <param name="browserLookup">
+        /// All available browsers registered to lookup keywords.
+        /// Uses <see cref="Browser.DefaultLookups"/> by default.
+        /// </param>
         public BrowserLauncher(
             ILogger<BrowserLauncher> logger,
             IDictionary<string, Browser> browserLookup)
@@ -20,6 +34,11 @@ namespace DotNetStartupCommands.BrowserLauncher
             _browserLookup = browserLookup;
         }
 
+        /// <summary>
+        /// Perform browser application launch based on command line arguments and a url.
+        /// </summary>
+        /// <param name="args">Command line arguments. Must start with launch command <see cref="Commands.Launch"/>.</param>
+        /// <param name="url">Url for browser to open. Defaults to http://localhost:5000/. </param>
         public void Launch(string[] args, string url)
         {
             try

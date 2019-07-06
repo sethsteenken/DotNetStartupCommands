@@ -3,8 +3,16 @@ using System.Linq;
 
 namespace DotNetStartupCommands.BrowserLauncher
 {
-    internal class LaunchArgumentContext
+    /// <summary>
+    /// Arguments context to organized supplied commandline arguments into formatted and workable values.
+    /// </summary>
+    internal sealed class LaunchArgumentContext
     {
+        /// <summary>
+        /// Create new launch argument instance.
+        /// </summary>
+        /// <param name="args">Command line arguments. Must contain <see cref="Commands.Launch"/>.</param>
+        /// <param name="url">Required url for the browser to open.</param>
         public LaunchArgumentContext(string[] args, string url)
         {
             if (args == null || args.Length == 0)
