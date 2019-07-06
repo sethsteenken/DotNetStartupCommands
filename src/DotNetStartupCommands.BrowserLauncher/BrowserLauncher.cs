@@ -20,7 +20,7 @@ namespace DotNetStartupCommands.BrowserLauncher
             _browserLookup = browserLookup;
         }
 
-        public void Launch(string[] args)
+        public void Launch(string[] args, string url)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace DotNetStartupCommands.BrowserLauncher
                     return;
                 }
 
-                LaunchInternal(new LaunchArgumentContext(args));
+                LaunchInternal(new LaunchArgumentContext(args, url));
             }
             catch (Exception ex)
             {

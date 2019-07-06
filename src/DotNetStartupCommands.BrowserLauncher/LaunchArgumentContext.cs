@@ -5,7 +5,7 @@ namespace DotNetStartupCommands.BrowserLauncher
 {
     internal class LaunchArgumentContext
     {
-        public LaunchArgumentContext(string[] args)
+        public LaunchArgumentContext(string[] args, string url)
         {
             if (args == null || args.Length == 0)
                 throw new ArgumentNullException(nameof(args));
@@ -40,6 +40,9 @@ namespace DotNetStartupCommands.BrowserLauncher
                     }
                 }            
             }
+
+            if (!string.IsNullOrWhiteSpace(url))
+                Url = url.Trim();
         }
 
         internal bool Valid { get; }

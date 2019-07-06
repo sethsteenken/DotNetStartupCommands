@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using DotNetStartupCommands.BrowserLauncher;
+using System.Diagnostics;
 
 namespace TestWebApplication
 {
@@ -24,6 +25,7 @@ namespace TestWebApplication
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                //.UseUrls("http://localhost:3333/")
                 .UseStartup<Startup>();
     }
 }
