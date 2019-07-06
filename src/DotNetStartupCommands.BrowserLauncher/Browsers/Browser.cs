@@ -50,12 +50,14 @@ namespace DotNetStartupCommands.BrowserLauncher
                         { "c", new GoogleChromeBrowser() },
                         { "googlechrome", new GoogleChromeBrowser() },
                         { "google-chrome", new GoogleChromeBrowser() },
+
                         { "ie", new InternetExplorerBrowser() },
                         { "internet-explorer", new InternetExplorerBrowser() },
                         { "iexplore", new InternetExplorerBrowser() },
                         { "iexplorer", new InternetExplorerBrowser() },
                         { "explorer", new InternetExplorerBrowser() },
                         { "internetexplorer", new InternetExplorerBrowser() },
+
                         { "msedge", new MicrosoftEdgeBrowser() },
                         { "edge", new MicrosoftEdgeBrowser() },
                         { "e", new MicrosoftEdgeBrowser() },
@@ -63,10 +65,12 @@ namespace DotNetStartupCommands.BrowserLauncher
                         { "microsoftedge", new MicrosoftEdgeBrowser() },
                         { "microsoft-edge", new MicrosoftEdgeBrowser() },
                         { "microsoft-edge:", new MicrosoftEdgeBrowser() },
+
                         { "firefox", new MozillaFirefoxBrowser() },
                         { "ff", new MozillaFirefoxBrowser() },
                         { "f", new MozillaFirefoxBrowser() },
                         { "fire-fox", new MozillaFirefoxBrowser() },
+
                         { "safari", new SafariBrowser() },
                         { "s", new SafariBrowser() },
                         { "saf", new SafariBrowser() }

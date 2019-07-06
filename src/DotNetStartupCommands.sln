@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29009.5
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetStartupCommands.BrowserLauncher", "DotNetStartupCommands.BrowserLauncher\DotNetStartupCommands.BrowserLauncher.csproj", "{1CB9272C-E7D9-4D58-8A77-A4C78F3B0539}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetStartupCommands.BrowserLauncher", "DotNetStartupCommands.BrowserLauncher\DotNetStartupCommands.BrowserLauncher.csproj", "{1CB9272C-E7D9-4D58-8A77-A4C78F3B0539}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DD69FAA2-9197-4B6A-8B1F-3E7FD9C61964}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApplication", "..\tests\TestWebApplication\TestWebApplication.csproj", "{BB7BAB11-D68A-4008-B280-571D80307DBF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,9 +19,16 @@ Global
 		{1CB9272C-E7D9-4D58-8A77-A4C78F3B0539}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CB9272C-E7D9-4D58-8A77-A4C78F3B0539}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CB9272C-E7D9-4D58-8A77-A4C78F3B0539}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BB7BAB11-D68A-4008-B280-571D80307DBF} = {DD69FAA2-9197-4B6A-8B1F-3E7FD9C61964}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3498E380-D9BE-4E19-AA7D-2E4325C052C3}

@@ -44,7 +44,7 @@ namespace DotNetStartupCommands.BrowserLauncher
 
         internal bool Valid { get; }
         public string Browser { get; } = "chrome";
-        public string Url { get; } = "https://localhost:5000/";
+        public string Url { get; } = "http://localhost:5000/";
         public int Delay { get; } = 500;
         public bool AttachDebugger { get; }
     }
