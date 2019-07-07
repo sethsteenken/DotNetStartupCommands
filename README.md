@@ -34,9 +34,9 @@ When starting an AspNetCore application via the dotnet CLI, pass arguments to ta
 
 Argument * *--launch-browser* * is required for the LaunchBrowser functionality to be enabled. Passing no further arguments will utilize default values:
 
-Browser: chrome
-Debug: false
-Delay: 500 milliseconds
+ - Browser: chrome
+ - Debug: false
+ - Delay: 500 milliseconds
 
 This default command will start an AspNetCore application and then launch Google Chrome without attaching a debugger and will delay 500 milliseconds before opening browser:
 ```powershell
