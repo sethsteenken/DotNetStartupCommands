@@ -59,6 +59,7 @@ dotnet run --launch-browser safari,nodebug,2000
 ```
 ### Browsers
 Here's the list of launchable browsers and associated commands recognized by each browser:
+
 **Google Chrome** (default)
 - chrome
 - googlechrome
