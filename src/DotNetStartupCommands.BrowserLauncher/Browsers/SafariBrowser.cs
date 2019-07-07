@@ -1,6 +1,6 @@
 ﻿namespace DotNetStartupCommands.BrowserLauncher
 {
-    internal class SafariBrowser : Browser
+    public sealed class SafariBrowser : Browser
     {
         public override string Name => "Safari";
 

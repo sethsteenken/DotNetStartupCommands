@@ -1,6 +1,6 @@
 ﻿namespace DotNetStartupCommands.BrowserLauncher
 {
-    internal class MozillaFirefoxBrowser : Browser
+    public sealed class MozillaFirefoxBrowser : Browser
     {
         public override string Name => "Mozilla Firefox";
 

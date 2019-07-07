@@ -1,6 +1,6 @@
 ﻿namespace DotNetStartupCommands.BrowserLauncher
 {
-    internal class GoogleChromeBrowser : Browser
+    public sealed class GoogleChromeBrowser : Browser
     {
         public override string Name => "Google Chrome";
 

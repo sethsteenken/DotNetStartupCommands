@@ -4,7 +4,7 @@ using System.Linq;
 namespace DotNetStartupCommands.BrowserLauncher
 {
     /// <summary>
-    /// Arguments context to organized supplied commandline arguments into formatted and workable values.
+    /// Arguments context to organize supplied command-line arguments into formatted and workable values.
     /// </summary>
     internal sealed class LaunchArgumentContext
     {

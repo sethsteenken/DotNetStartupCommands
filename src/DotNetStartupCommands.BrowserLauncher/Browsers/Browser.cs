@@ -70,36 +70,42 @@ namespace DotNetStartupCommands.BrowserLauncher
             {
                 if (_defaultLookups == null)
                 {
+                    var chrome = new GoogleChromeBrowser();
+                    var ie = new InternetExplorerBrowser();
+                    var edge = new MicrosoftEdgeBrowser();
+                    var ff = new MozillaFirefoxBrowser();
+                    var safari = new SafariBrowser();
+
                     _defaultLookups = new Dictionary<string, Browser>()
                     {
-                        { "chrome", new GoogleChromeBrowser() },
-                        { "c", new GoogleChromeBrowser() },
-                        { "googlechrome", new GoogleChromeBrowser() },
-                        { "google-chrome", new GoogleChromeBrowser() },
+                        { "chrome", chrome },
+                        { "c", chrome },
+                        { "googlechrome", chrome },
+                        { "google-chrome", chrome },
 
-                        { "ie", new InternetExplorerBrowser() },
-                        { "internet-explorer", new InternetExplorerBrowser() },
-                        { "iexplore", new InternetExplorerBrowser() },
-                        { "iexplorer", new InternetExplorerBrowser() },
-                        { "explorer", new InternetExplorerBrowser() },
-                        { "internetexplorer", new InternetExplorerBrowser() },
+                        { "ie", ie },
+                        { "internet-explorer", ie },
+                        { "iexplore", ie },
+                        { "iexplorer", ie },
+                        { "explorer", ie },
+                        { "internetexplorer", ie },
 
-                        { "msedge", new MicrosoftEdgeBrowser() },
-                        { "edge", new MicrosoftEdgeBrowser() },
-                        { "e", new MicrosoftEdgeBrowser() },
-                        { "ms-edge", new MicrosoftEdgeBrowser() },
-                        { "microsoftedge", new MicrosoftEdgeBrowser() },
-                        { "microsoft-edge", new MicrosoftEdgeBrowser() },
-                        { "microsoft-edge:", new MicrosoftEdgeBrowser() },
+                        { "msedge", edge },
+                        { "edge", edge },
+                        { "e", edge },
+                        { "ms-edge", edge },
+                        { "microsoftedge", edge },
+                        { "microsoft-edge", edge },
+                        { "microsoft-edge:", edge },
 
-                        { "firefox", new MozillaFirefoxBrowser() },
-                        { "ff", new MozillaFirefoxBrowser() },
-                        { "f", new MozillaFirefoxBrowser() },
-                        { "fire-fox", new MozillaFirefoxBrowser() },
+                        { "firefox", ff },
+                        { "ff", ff },
+                        { "f", ff },
+                        { "fire-fox", ff },
 
-                        { "safari", new SafariBrowser() },
-                        { "s", new SafariBrowser() },
-                        { "saf", new SafariBrowser() }
+                        { "safari", safari },
+                        { "s", safari },
+                        { "saf", safari }
                     };
                 }
 

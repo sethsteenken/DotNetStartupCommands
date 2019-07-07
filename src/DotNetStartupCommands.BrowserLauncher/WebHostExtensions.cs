@@ -11,9 +11,9 @@ namespace DotNetStartupCommands.BrowserLauncher
     {
         /// <summary>
         /// Attempt to launch browser window based on supplied command line arguments.
-        /// Allows for launching browser upon a "dotnet run" command.
+        /// Intended for launching browser upon a "dotnet run" command.
         /// Argument syntax: dotnet run --launch-browser [browser],debug,500
-        /// Browser value defaults to Chrome, debug defaults to disabled, and delay defaults to 500 milliseconds.
+        /// Browser value defaults to chrome, debug defaults to disabled (omitted), and delay defaults to 500 milliseconds (omitted).
         /// Call this prior to <see cref="IWebHost.Start"/> or Run().
         /// Recommend only be called from a local or development-only environment.
         /// </summary>
@@ -25,6 +25,7 @@ namespace DotNetStartupCommands.BrowserLauncher
             if (host == null)
                 throw new ArgumentNullException(nameof(host));
 
+            // check in case it was registered
             var browserLauncher = host.Services.GetService<BrowserLauncher>();
 
             if (browserLauncher == null)

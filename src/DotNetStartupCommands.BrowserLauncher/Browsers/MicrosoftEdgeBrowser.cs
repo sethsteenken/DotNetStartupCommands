@@ -1,6 +1,6 @@
 ﻿namespace DotNetStartupCommands.BrowserLauncher
 {
-    internal class MicrosoftEdgeBrowser : Browser
+    public sealed class MicrosoftEdgeBrowser : Browser
     {
         public override string Name => "Microsoft Edge";
 

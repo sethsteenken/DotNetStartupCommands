@@ -37,7 +37,7 @@ namespace DotNetStartupCommands.BrowserLauncher
         /// <summary>
         /// Perform browser application launch based on command line arguments and a url.
         /// </summary>
-        /// <param name="args">Command line arguments. Must start with launch command <see cref="Commands.Launch"/>.</param>
+        /// <param name="args">Command line arguments. Must contain launch command <see cref="Commands.Launch"/>.</param>
         /// <param name="url">Url for browser to open. Defaults to http://localhost:5000/. </param>
         public void Launch(string[] args, string url)
         {

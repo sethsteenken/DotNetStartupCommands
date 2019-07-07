@@ -1,6 +1,6 @@
 ﻿namespace DotNetStartupCommands.BrowserLauncher
 {
-    internal class InternetExplorerBrowser : Browser
+    public sealed class InternetExplorerBrowser : Browser
     {
         public override string Name => "Internet Explorer";
 
