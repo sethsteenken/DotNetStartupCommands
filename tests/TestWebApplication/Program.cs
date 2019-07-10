@@ -18,7 +18,10 @@ namespace TestWebApplication
         {
             var host = CreateWebHostBuilder(args).Build();
 
+#if DEBUG
+            // Opens browser upon run if command was supplied in arguments.
             host.LaunchBrowser(args);
+#endif
 
             host.Run();
         }
