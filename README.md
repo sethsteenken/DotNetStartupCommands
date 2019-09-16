@@ -1,5 +1,5 @@
 # DotNetStartupCommands
-Extension to the dotnet CLc Commands.
+Extension to the dotnet CLI Commands.
 
 ## BrowserLauncher
 Run command when launching AspNetCore applications to allow for opening browser, debugging, etc. Compliments the * *dotnet run* * command.
