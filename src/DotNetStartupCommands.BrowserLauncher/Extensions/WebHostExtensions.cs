@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Server.Features;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Linq;
 
 namespace DotNetStartupCommands.BrowserLauncher
 {
@@ -25,19 +22,7 @@ namespace DotNetStartupCommands.BrowserLauncher
             if (host == null)
                 throw new ArgumentNullException(nameof(host));
 
-            // check in case it was registered
-            var browserLauncher = host.Services.GetService<BrowserLauncher>();
-
-            if (browserLauncher == null)
-            {
-                var loggerFactory = host.Services.GetRequiredService<ILoggerFactory>();
-
-                browserLauncher = new BrowserLauncher(
-                                            loggerFactory.CreateLogger<BrowserLauncher>(),
-                                            Browser.DefaultLookups);
-            }
-
-            browserLauncher.Launch(args, GetLaunchUrl(host));
+            Launcher.Launch(host.Services, args, GetLaunchUrl(host));
         }
 
         /// <summary>
@@ -51,16 +36,7 @@ namespace DotNetStartupCommands.BrowserLauncher
             if (host == null)
                 throw new ArgumentNullException(nameof(host));
 
-            string url = null;
-            var addressesFeature = host.ServerFeatures.Get<IServerAddressesFeature>();
-            if (addressesFeature != null
-                && addressesFeature.Addresses != null
-                && addressesFeature.Addresses.Count > 0)
-            {
-                url = addressesFeature.Addresses.FirstOrDefault();
-            }
-
-            return url;
+            return host.ServerFeatures.Get<IServerAddressesFeature>()?.GetLaunchUrl();
         }
     }
 }
