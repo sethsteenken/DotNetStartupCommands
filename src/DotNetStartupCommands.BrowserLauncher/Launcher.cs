@@ -7,17 +7,16 @@ namespace DotNetStartupCommands.BrowserLauncher
     internal static class Launcher
     {
         /// <summary>
-        /// 
+        /// Establish <see cref="BrowserLauncher"/> and launch browser application 
+        /// based on <paramref name="args"/> value and under url at <paramref name="url"/>.
         /// </summary>
-        /// <param name="serviceProvider"></param>
-        /// <param name="args"></param>
-        /// <param name="url"></param>
+        /// <param name="serviceProvider">Establised service provider. If <see cref="BrowserLauncher"/> has been registered, it will be used to launch browser application.</param>
+        /// <param name="args">Arguments for launching browser application.</param>
+        /// <param name="url">Optional url on which the application is listening. The default is used if empty.</param>
         public static void Launch(IServiceProvider serviceProvider, string[] args, string url)
         {
             if (serviceProvider == null)
                 throw new ArgumentNullException(nameof(serviceProvider));
-            if (string.IsNullOrWhiteSpace(url))
-                throw new ArgumentNullException(nameof(url));
 
             // check in case it was registered
             var browserLauncher = serviceProvider.GetService<BrowserLauncher>();

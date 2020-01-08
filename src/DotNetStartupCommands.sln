@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetStartupCommands.Brows
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DD69FAA2-9197-4B6A-8B1F-3E7FD9C61964}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWebApplication", "..\tests\TestWebApplication\TestWebApplication.csproj", "{BB7BAB11-D68A-4008-B280-571D80307DBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestWebApplication", "..\tests\TestWebApplication\TestWebApplication.csproj", "{BB7BAB11-D68A-4008-B280-571D80307DBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWeb31Application", "..\tests\TestWeb31Application\TestWeb31Application.csproj", "{D4E8FCB0-EF63-46D7-9840-3208E90A63F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +25,17 @@ Global
 		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BB7BAB11-D68A-4008-B280-571D80307DBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E8FCB0-EF63-46D7-9840-3208E90A63F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E8FCB0-EF63-46D7-9840-3208E90A63F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E8FCB0-EF63-46D7-9840-3208E90A63F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E8FCB0-EF63-46D7-9840-3208E90A63F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BB7BAB11-D68A-4008-B280-571D80307DBF} = {DD69FAA2-9197-4B6A-8B1F-3E7FD9C61964}
+		{D4E8FCB0-EF63-46D7-9840-3208E90A63F0} = {DD69FAA2-9197-4B6A-8B1F-3E7FD9C61964}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3498E380-D9BE-4E19-AA7D-2E4325C052C3}
