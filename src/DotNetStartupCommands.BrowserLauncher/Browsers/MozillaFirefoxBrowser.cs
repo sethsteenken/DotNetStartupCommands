@@ -2,7 +2,11 @@
 {
     public sealed class MozillaFirefoxBrowser : Browser
     {
-        public override string Name => "Mozilla Firefox";
+        public MozillaFirefoxBrowser() 
+            : base("Mozilla Firefox", 
+                  "firefox", "ff", "f", "fire-fox")
+        {
+        }
 
         protected override string GetLaunchCommand(string url)
         {

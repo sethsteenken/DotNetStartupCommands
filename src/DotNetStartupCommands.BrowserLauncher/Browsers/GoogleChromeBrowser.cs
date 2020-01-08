@@ -2,7 +2,12 @@
 {
     public sealed class GoogleChromeBrowser : Browser
     {
-        public override string Name => "Google Chrome";
+        public GoogleChromeBrowser() 
+            : base("Google Chrome", 
+                  "chrome", "c", "googlechrome", "google-chrome")
+        {
+
+        }
 
         protected override string GetLaunchCommand(string url)
         {

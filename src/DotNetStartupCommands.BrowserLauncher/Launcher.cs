@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using System;
+using System.Collections.Generic;
 
 namespace DotNetStartupCommands.BrowserLauncher
 {
@@ -25,9 +26,14 @@ namespace DotNetStartupCommands.BrowserLauncher
             {
                 var loggerFactory = serviceProvider.GetRequiredService<ILoggerFactory>();
 
+                // allow for custom lookups
+                var lookups = serviceProvider.GetService<IReadOnlyDictionary<string, Browser>>();
+                if (lookups == null)
+                    lookups = Browsers.DefaultLookups;
+
                 browserLauncher = new BrowserLauncher(
                                             loggerFactory.CreateLogger<BrowserLauncher>(),
-                                            Browser.DefaultLookups);
+                                            lookups);
             }
 
             browserLauncher.Launch(args, url);

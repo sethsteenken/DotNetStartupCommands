@@ -13,7 +13,7 @@ namespace DotNetStartupCommands.BrowserLauncher
     public sealed class BrowserLauncher
     {
         private readonly ILogger<BrowserLauncher> _logger;
-        private readonly IDictionary<string, Browser> _browserLookup;
+        private readonly IReadOnlyDictionary<string, Browser> _browserLookup;
 
         /// <summary>
         /// Creates a browser launching instance.
@@ -24,11 +24,11 @@ namespace DotNetStartupCommands.BrowserLauncher
         /// </param>
         /// <param name="browserLookup">
         /// All available browsers registered to lookup keywords.
-        /// Uses <see cref="Browser.DefaultLookups"/> by default.
+        /// Uses <see cref="Browsers.DefaultLookups"/> by default.
         /// </param>
         public BrowserLauncher(
             ILogger<BrowserLauncher> logger,
-            IDictionary<string, Browser> browserLookup)
+            IReadOnlyDictionary<string, Browser> browserLookup)
         {
             _logger = logger;
             _browserLookup = browserLookup;
@@ -82,7 +82,10 @@ namespace DotNetStartupCommands.BrowserLauncher
             Process.Start(browser.GetLaunchProcess(context.Url));
 
             if (context.AttachDebugger)
+            {
+                _logger.LogInformation("Attaching debugger...");
                 Debugger.Launch();
+            }
         }
     }
 }

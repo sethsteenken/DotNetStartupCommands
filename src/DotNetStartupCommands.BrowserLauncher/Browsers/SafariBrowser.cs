@@ -2,7 +2,11 @@
 {
     public sealed class SafariBrowser : Browser
     {
-        public override string Name => "Safari";
+        public SafariBrowser() 
+            : base("Safari", 
+                  "safari", "s", "saf")
+        {
+        }
 
         protected override string GetLaunchCommand(string url)
         {

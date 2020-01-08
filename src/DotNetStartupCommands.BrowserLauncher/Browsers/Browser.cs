@@ -11,12 +11,27 @@ namespace DotNetStartupCommands.BrowserLauncher
     /// </summary>
     public abstract class Browser
     {
-        private static IDictionary<string, Browser> _defaultLookups;
+        protected Browser(string name, params string[] identifiers)
+        {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentNullException(nameof(name));
+
+            if (identifiers == null || identifiers.Length == 0)
+                throw new ArgumentOutOfRangeException(nameof(identifiers));
+
+            Name = name;
+            Identifiers = identifiers;
+        }
 
         /// <summary>
         /// Friendly name for the internet browser application.
         /// </summary>
-        public abstract string Name { get; }
+        public string Name { get; }
+
+        /// <summary>
+        /// List of string-based identifiers for the browser for lookup from the command line argument.
+        /// </summary>
+        public string[] Identifiers { get; }
 
         /// <summary>
         /// Unique command/agruments required when launching the browser application.
@@ -58,59 +73,6 @@ namespace DotNetStartupCommands.BrowserLauncher
             }
 
             throw new InvalidOperationException("OS not found to launch browser.");
-        }
-
-        /// <summary>
-        /// Default list of browsers with custom lookup/shorthand identifiers.
-        /// Examples: "chrome", "googlechrome", "ie", "internetexplorer", "firefox", "ff", "msedge", "edge", "safari", "saf"
-        /// </summary>
-        public static IDictionary<string, Browser> DefaultLookups
-        {
-            get
-            {
-                if (_defaultLookups == null)
-                {
-                    var chrome = new GoogleChromeBrowser();
-                    var ie = new InternetExplorerBrowser();
-                    var edge = new MicrosoftEdgeBrowser();
-                    var ff = new MozillaFirefoxBrowser();
-                    var safari = new SafariBrowser();
-
-                    _defaultLookups = new Dictionary<string, Browser>()
-                    {
-                        { "chrome", chrome },
-                        { "c", chrome },
-                        { "googlechrome", chrome },
-                        { "google-chrome", chrome },
-
-                        { "ie", ie },
-                        { "internet-explorer", ie },
-                        { "iexplore", ie },
-                        { "iexplorer", ie },
-                        { "explorer", ie },
-                        { "internetexplorer", ie },
-
-                        { "msedge", edge },
-                        { "edge", edge },
-                        { "e", edge },
-                        { "ms-edge", edge },
-                        { "microsoftedge", edge },
-                        { "microsoft-edge", edge },
-                        { "microsoft-edge:", edge },
-
-                        { "firefox", ff },
-                        { "ff", ff },
-                        { "f", ff },
-                        { "fire-fox", ff },
-
-                        { "safari", safari },
-                        { "s", safari },
-                        { "saf", safari }
-                    };
-                }
-
-                return _defaultLookups;
-            }
         }
     }
 }
