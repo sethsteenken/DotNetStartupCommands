@@ -1,36 +1,40 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <WarningsAsErrors />
     <NoWarn>1701;1702;CS1591</NoWarn>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
-  <ItemGroup>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <DefineConstants>NET_CORE_APP_3_1</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.1'">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+
+  <ItemGroup  Condition="'$(TargetFramework)' == 'netstandard2.0'">
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.Server.Abstractions" Version="2.2.0" />
   </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition="'$(TargetFramework)' != 'netstandard2.0'">
-    <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.0" />
+  
+  <ItemGroup>
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <PropertyGroup>
     <LangVersion>latest</LangVersion>
-    <Version>1.1.0</Version>
-    <AssemblyVersion>1.1.0.0</AssemblyVersion>
-    <FileVersion>1.1.0</FileVersion>
-    <InformationalVersion>1.1.0</InformationalVersion>
+    <Version>1.2.0</Version>
+    <AssemblyVersion>1.2.0.0</AssemblyVersion>
+    <FileVersion>1.2.0</FileVersion>
+    <InformationalVersion>1.2.0</InformationalVersion>
     <Authors>Seth Steenken</Authors>
     <Product>DotNetStartupCommands.BrowserLauncher</Product>
     <Description>BrowserLauncher is a dotnet run CLI extension to launch a browser when starting an AspNetCore application from the dotnet command line.</Description>
-    <Copyright>Copyright © Seth Steenken 2019</Copyright>
+    <Copyright>Copyright © Seth Steenken 2020</Copyright>
     <Summary>BrowserLauncher is a dotnet run CLI extension to launch a browser when starting an AspNetCore application from the dotnet command line.</Summary>
     <NeutralLanguage>en-US</NeutralLanguage>
     <Title>DotNetStartupCommands.BrowserLauncher</Title>
@@ -50,9 +54,7 @@
     <AssemblyOriginatorKeyFile>../../signing.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
-  </ItemGroup>
+ 
 
   <ItemGroup>
     <None Include="..\..\LICENSE">
